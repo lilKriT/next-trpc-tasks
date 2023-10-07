@@ -1,7 +1,6 @@
 import { AppRouter } from "@/server";
-import { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
+import { inferRouterOutputs } from "@trpc/server";
 
-type RouterInput = inferRouterInputs<AppRouter>;
 type RouterOutput = inferRouterOutputs<AppRouter>;
 
 const TaskCard = ({ task }: { task: RouterOutput["getTasks"][number] }) => {

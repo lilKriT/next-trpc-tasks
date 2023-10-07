@@ -18,8 +18,13 @@ const TaskForm = () => {
     },
   });
 
-  const onSubmit = (data: FieldValues) => {
+  const onSubmit = async (data: FieldValues) => {
     console.log("Submitting form", data);
+
+    // Throttling
+    const throttle = false;
+    if (throttle) await new Promise((resolve) => setTimeout(resolve, 3000));
+
     addTask.mutate(data.title);
   };
 
@@ -31,7 +36,9 @@ const TaskForm = () => {
         placeholder="I want to..."
       />
       {errors.title && <p>{`${errors.title.message}`}</p>}
-      <button className="btn btn--primary">Add</button>
+      <button className="btn btn--primary" disabled={isSubmitting}>
+        Add
+      </button>
     </form>
   );
 };

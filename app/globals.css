@@ -41,8 +41,13 @@
   .btn--danger {
   }
 
+  /* There might be a better way to do this... */
+  .btn {
+    @apply disabled:bg-red-400 disabled:cursor-not-allowed;
+  }
+
   .form {
-    @apply border border-violet-500 w-full max-w-xl mx-auto;
+    @apply border border-violet-500 w-full max-w-xl mx-auto shadow-[0_0_25px_5px] shadow-violet-500/30;
     @apply p-4 rounded-xl;
   }
 
@@ -61,4 +66,10 @@
 }
 
 @layer utilities {
+  .link {
+    @apply font-bold tracking-wider;
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-violet-300 via-emerald-500 to-violet-700;
+    @apply bg-size-200 bg-pos-0 hover:bg-pos-100 duration-300 ease-in-out;
+  }
 }

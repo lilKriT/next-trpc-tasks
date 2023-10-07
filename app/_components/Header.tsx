@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Heaader = () => {
+const Header = () => {
   return (
     <header
       className="sticky top-0 bg-slate-200 flex justify-center items-center border-b border-violet-600 shadow-[0_3px_25px_3px] 
@@ -32,4 +32,4 @@ const Heaader = () => {
   );
 };
 
-export default Heaader;
+export default Header;
