@@ -22,23 +22,28 @@
   .btn {
     @apply font-bold text-lg;
     @apply px-2 py-1 rounded-lg;
+    @apply flex justify-center items-center;
+    @apply duration-150 ease-in-out;
   }
 
   .btn--primary {
     @apply bg-violet-500 text-slate-100;
-    @apply hover:bg-violet-800 duration-150 ease-in-out;
+    @apply hover:bg-violet-800;
   }
 
   .btn--secondary {
   }
 
   .btn--small {
+    @apply px-1 py-1 text-base;
   }
 
   .btn--success {
   }
 
   .btn--danger {
+    @apply bg-red-500 text-slate-100;
+    @apply hover:bg-red-800;
   }
 
   /* There might be a better way to do this... */
@@ -60,6 +65,7 @@
   }
 
   .taskCard {
+    @apply flex justify-between items-center;
     @apply px-4 py-2 border border-violet-500 rounded-lg text-xl;
     @apply hover:bg-violet-500/10;
   }

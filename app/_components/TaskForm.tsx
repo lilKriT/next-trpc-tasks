@@ -2,6 +2,8 @@
 import { useForm, FieldValues } from "react-hook-form";
 import { trpc } from "../_trpc/client";
 
+import { BsFillSendFill } from "react-icons/bs";
+
 const TaskForm = () => {
   const {
     register,
@@ -36,8 +38,8 @@ const TaskForm = () => {
         placeholder="I want to..."
       />
       {errors.title && <p>{`${errors.title.message}`}</p>}
-      <button className="btn btn--primary" disabled={isSubmitting}>
-        Add
+      <button className="btn btn--primary w-12" disabled={isSubmitting}>
+        <BsFillSendFill />
       </button>
     </form>
   );

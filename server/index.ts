@@ -12,6 +12,12 @@ export const appRouter = router({
     });
     return addedTask;
   }),
+  deleteTask: publicProcedure.input(z.number()).mutation(async (opts) => {
+    const deletedTask = await usePrisma.task.delete({
+      where: { id: opts.input },
+    });
+    return deletedTask;
+  }),
 });
 
 export type AppRouter = typeof appRouter;
