@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-100;
+  }
+}
+
+@layer components {
+  .logo {
+    @apply uppercase text-lg font-bold tracking-[2px];
+    @apply hover:tracking-[4px] duration-150 ease-in-out;
+  }
+
+  .navLink {
+    @apply uppercase text-lg tracking-widest;
+    @apply hover:tracking-[4px] duration-150 ease-in-out;
+  }
+
+  .btn {
+  }
+
+  .btn--primary {
+  }
+
+  .btn--secondary {
+  }
+
+  .btn--small {
+  }
+
+  .btn--success {
+  }
+
+  .btn--danger {
+  }
+
+  .form {
+  }
+
+  .formLabel {
+  }
+
+  .formInput {
+  }
+}
+
+@layer utilities {
+}

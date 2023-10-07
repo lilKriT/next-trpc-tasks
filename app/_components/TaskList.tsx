@@ -7,7 +7,6 @@ const TaskList = () => {
 
   return (
     <div>
-      {getTasks.data?.length ? "yes tasks" : "No tasks"}
       {getTasks.data?.map((task) => (
         <div key={task.id}>
           <p>
