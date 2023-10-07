@@ -20,9 +20,13 @@
   }
 
   .btn {
+    @apply font-bold text-lg;
+    @apply px-2 py-1 rounded-lg;
   }
 
   .btn--primary {
+    @apply bg-violet-500 text-slate-100;
+    @apply hover:bg-violet-800 duration-150 ease-in-out;
   }
 
   .btn--secondary {
@@ -38,12 +42,21 @@
   }
 
   .form {
+    @apply border border-violet-500 w-full max-w-xl mx-auto;
+    @apply p-4 rounded-xl;
   }
 
   .formLabel {
   }
 
   .formInput {
+    @apply text-lg px-2 py-1 rounded-xl border border-violet-500/30;
+    @apply focus:outline-none;
+  }
+
+  .taskCard {
+    @apply px-4 py-2 border border-violet-500 rounded-lg text-xl;
+    @apply hover:bg-violet-500/10;
   }
 }
 

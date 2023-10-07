@@ -3,7 +3,7 @@ import Link from "next/link";
 const Heaader = () => {
   return (
     <header
-      className="sticky top-0 flex justify-center items-center border-b border-violet-600 shadow-[0_3px_25px_3px] 
+      className="sticky top-0 bg-slate-200 flex justify-center items-center border-b border-violet-600 shadow-[0_3px_25px_3px] 
     shadow-violet-600/30"
     >
       <nav className="container flex justify-between mt-4 mb-2">

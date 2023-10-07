@@ -10,7 +10,13 @@ const TaskForm = () => {
     reset,
   } = useForm();
 
-  const addTask = trpc.createTask.useMutation();
+  const context = trpc.useContext();
+
+  const addTask = trpc.createTask.useMutation({
+    onSettled: () => {
+      context.getTasks.refetch();
+    },
+  });
 
   const onSubmit = (data: FieldValues) => {
     console.log("Submitting form", data);
@@ -18,10 +24,14 @@ const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("title", { required: "Task Title is required." })} />
+    <form onSubmit={handleSubmit(onSubmit)} className="form flex gap-2 mt-4">
+      <input
+        {...register("title", { required: "Task Title is required." })}
+        className="formInput grow"
+        placeholder="I want to..."
+      />
       {errors.title && <p>{`${errors.title.message}`}</p>}
-      <button>Add</button>
+      <button className="btn btn--primary">Add</button>
     </form>
   );
 };
