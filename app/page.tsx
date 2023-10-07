@@ -6,6 +6,7 @@ export default function Home() {
     <main className="">
       <h1>tRPC Tasks.</h1>
       <TaskList />
+      <TaskForm />
     </main>
   );
 }

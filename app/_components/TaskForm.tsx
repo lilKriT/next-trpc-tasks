@@ -1,15 +1,21 @@
 "use client";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, FieldValues } from "react-hook-form";
 
 const TaskForm = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+    reset,
+  } = useForm();
 
-  const onSubmit = () => {
-    console.log("Submitting form");
+  const onSubmit = (data: FieldValues) => {
+    console.log("Submitting form", data);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("title", { required: "Task Title is required." })} />
+      {errors.title && <p>{`${errors.title.message}`}</p>}
       <button>Add</button>
     </form>
   );
