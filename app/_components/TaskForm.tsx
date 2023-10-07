@@ -1,5 +1,6 @@
 "use client";
 import { useForm, FieldValues } from "react-hook-form";
+import { trpc } from "../_trpc/client";
 
 const TaskForm = () => {
   const {
@@ -9,9 +10,13 @@ const TaskForm = () => {
     reset,
   } = useForm();
 
+  const addTask = trpc.createTask.useMutation();
+
   const onSubmit = (data: FieldValues) => {
     console.log("Submitting form", data);
+    addTask.mutate(data.title);
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("title", { required: "Task Title is required." })} />
