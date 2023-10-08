@@ -39,6 +39,8 @@
   }
 
   .btn--success {
+    @apply bg-emerald-500 text-slate-100;
+    @apply hover:bg-emerald-300;
   }
 
   .btn--danger {
@@ -62,6 +64,13 @@
   .formInput {
     @apply text-lg px-2 py-1 rounded-xl border border-violet-500/30;
     @apply focus:outline-none;
+  }
+
+  .checkBox {
+    @apply appearance-none w-6 aspect-square cursor-pointer;
+    @apply rounded border border-violet-500;
+    @apply checked:bg-violet-500;
+    @apply duration-150 ease-in-out;
   }
 
   .taskCard {

@@ -12,6 +12,29 @@ export const appRouter = router({
     });
     return addedTask;
   }),
+  editTask: publicProcedure
+    .input(
+      z.object({
+        id: z.number(),
+        task: z
+          .object({
+            title: z.string(),
+            completed: z.boolean(),
+          })
+          .partial(),
+      })
+    )
+    .mutation(async (opts) => {
+      const editedTask = await usePrisma.task.update({
+        where: { id: opts.input.id },
+        data: {
+          title: opts.input.task.title,
+          completed: opts.input.task.completed,
+        },
+      });
+
+      return editedTask;
+    }),
   deleteTask: publicProcedure.input(z.number()).mutation(async (opts) => {
     const deletedTask = await usePrisma.task.delete({
       where: { id: opts.input },

@@ -37,6 +37,7 @@ const TaskForm = () => {
         {...register("title", { required: "Task Title is required." })}
         className="formInput grow"
         placeholder="I want to..."
+        autoFocus
       />
       {errors.title && <p>{`${errors.title.message}`}</p>}
       <button className="btn btn--primary w-12" disabled={isSubmitting}>
