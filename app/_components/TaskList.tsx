@@ -8,9 +8,11 @@ const TaskList = () => {
 
   return (
     <div className="flex flex-col gap-2 mt-4">
-      {getTasks.data?.map((task) => (
-        <TaskCard task={task} />
-      ))}
+      {!!getTasks.data?.length ? (
+        getTasks.data?.map((task) => <TaskCard task={task} />)
+      ) : (
+        <p>No tasks yet.</p>
+      )}
     </div>
   );
 };
