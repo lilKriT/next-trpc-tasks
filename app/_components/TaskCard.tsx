@@ -25,6 +25,7 @@ const TaskCard = ({ task }: { task: RouterOutput["getTasks"][number] }) => {
   const deleteTask = trpc.deleteTask.useMutation({
     onSettled: () => {
       context.getTasks.refetch();
+      context.getTasksCount.refetch();
     },
   });
 
@@ -32,7 +33,7 @@ const TaskCard = ({ task }: { task: RouterOutput["getTasks"][number] }) => {
     <div className="taskCard">
       {/* Title / edit */}
       {!taskEditing ? (
-        <h2>{task.title}</h2>
+        <h2 className={`${task.completed && "line-through"}`}>{task.title}</h2>
       ) : (
         <input
           value={taskTitle}

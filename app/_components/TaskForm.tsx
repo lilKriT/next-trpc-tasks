@@ -17,6 +17,7 @@ const TaskForm = () => {
   const addTask = trpc.createTask.useMutation({
     onSettled: () => {
       context.getTasks.refetch();
+      context.getTasksCount.refetch();
       reset();
     },
   });

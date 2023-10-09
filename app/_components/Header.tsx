@@ -1,6 +1,10 @@
 import Link from "next/link";
+import TaskCounter from "./TaskCounter";
+import { serverClient } from "../_trpc/serverClient";
 
-const Header = () => {
+const Header = async () => {
+  const tasksCount = await serverClient.getTasksCount();
+
   return (
     <header
       className="sticky top-0 bg-slate-200 flex justify-center items-center border-b border-violet-600 shadow-[0_3px_25px_3px] 
@@ -10,7 +14,9 @@ const Header = () => {
         <Link href={"/"} className="logo">
           Logo
         </Link>
-        <div className="justify-self-center">Task Counter.</div>
+        <div className="justify-self-center">
+          <TaskCounter initialTaskCount={tasksCount} />
+        </div>
         <menu className="flex gap-4 justify-self-end">
           <li>
             <Link href={"/"} className="navLink">
