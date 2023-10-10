@@ -5,6 +5,8 @@ import { trpc } from "../_trpc/client";
 const TaskCounter = ({ initialTaskCount }: { initialTaskCount: number }) => {
   const getTasksCount = trpc.getTasksCount.useQuery(undefined, {
     initialData: initialTaskCount,
+    refetchOnMount: false,
+    refetchOnReconnect: false,
   });
   return (
     <div>

@@ -1,7 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="bg-slate-200 flex justify-center">
-      <div className="container py-4 flex flex-col items-center gap-1">
+    <footer
+      className="flex justify-center border-t border-violet-500 shadow-[0_-3px_25px_3px] 
+    shadow-violet-600/30"
+    >
+      <div className="container py-6 flex flex-col items-center gap-1 text-sm">
         <p>A website using Next13 and tRPC.</p>
         <p>
           Created by{" "}
