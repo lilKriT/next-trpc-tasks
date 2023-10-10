@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 100 100" opacity="1">
+    <defs>
+        <radialGradient id="primaryGradient" cx="35%" cy="33%" r="20%">
+            <stop offset="0" stop-color="hsl(315, 100%, 72%, 50%)">
+                <animate attributeName="stop-color"
+                    values="hsl(315, 100%, 72%, 50%);hsl(115, 100%, 72%, 50%);hsl(315, 100%, 72%, 50%);" dur="15s"
+                    repeatCount="indefinite">
+                </animate>
+            </stop>
+            <!-- <stop offset="100%" stop-color="hsl(210, 40%, 96.1%)"></stop> -->
+            <stop offset="1" stop-color="hsl(210, 40%, 96.1%, 0%)"></stop>
+
+        </radialGradient>
+        <radialGradient id="secondaryGradient" cx="66%" cy="55%" r="30%">
+            <stop offset="0%" stop-color="hsl(115, 100%, 72%, 40%)"></stop>
+            <stop offset="100%" stop-color="hsl(210, 40%, 96.1%, 0%)"></stop>
+        </radialGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#primaryGradient)"></rect>
+    <rect width="100%" height="100%" fill="url(#secondaryGradient)"></rect>
+</svg>
