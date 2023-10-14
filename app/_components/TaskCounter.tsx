@@ -13,7 +13,7 @@ const TaskCounter = ({ initialTaskCount }: { initialTaskCount: number }) => {
       {!!getTasksCount.data ? (
         <p>You have {getTasksCount.data} tasks.</p>
       ) : (
-        <p>You don't have any tasks yet.</p>
+        <p>{`You don't have any tasks yet.`}</p>
       )}
     </div>
   );
